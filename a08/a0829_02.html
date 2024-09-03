@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <script>
+            document.write(10 + 5 + "<br/>"); // 결과값도 출력해줌, br/ : 줄 단락을 바꿔줌, + "" : 뒤에 문자를 붙여줘
+            document.write(10 - 5 + "<br/>");
+            document.write(10 * 5 + "<br/>");
+            document.write(10 / 5 + "<br/>");
+            // 숫자를 계속 바꿔야되는 경우 피곤함 ㅠ 이럴때 변수를 쓴다.
+
+            var num1 = Number(prompt("숫자1를 입력하세요.")); // prompt("숫자1를 입력하세요.") : 문자형
+            var num2 = Number(prompt("숫자2를 입력하세요.")); // Number : 숫자형으로 타입을 변경 (형 변환)
+            document.write(num1 + num2 + "<br/>");
+            document.write(num1 - num2 + "<br/>");
+            document.write(num1 * num2 + "<br/>");
+            document.write(num1 / num2 + "<br/>"); // 값을 계속 쓸거 같다 << 변수쓰기, 반복되는것은 지양하기
+            
+            /*
+            데이터 타입
+            문자(String) / 숫자(Number) : 실수(소숫점 o), 정수 / 논리형(Boolean) / undefined / null
+            */
+        </script>
+    </body>
+</html>
