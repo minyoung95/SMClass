@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>링크 만들기</title>
+  <style>
+    ul{list-style: none;} /* 앞에 점 없애기 */
+    li{width: 120px; height: 40px; border: 1px solid black; background: yellow; text-align: center; line-height: 40px;}
+    a{text-decoration: none; color: inherit;}
+  </style>
+</head>
+<body>
+  <ul>
+    <a href= "http://www.google.com"><li>구글</li></a> <!-- a가 li 바깥쪽 : 전체 범위에 링크가 걸림 -->
+    <li> <a href= "http://www.daum.net" target = "_self">다음</a></li> <!-- a가 li 안쪽 : 글자에만 링크가 걸림, target = "_self" : 현재화면에서 열어준다. -->
+    <li> <a href= "http://www.naver.com" target = "_blank">네이버</a></li> <!-- target = "_blank" : 새창으로 열어준다. -->
+    <a href="https://www.chosun.com/resizer/v2/IOEJVPU3K2Y737PVEQT3HFI4NA.jpg?auth=249c3548556f9a6b20fb451a8994d78591a79ba757a0ad500c3ca94c85985e13&width=616" download="https://www.chosun.com/resizer/v2/IOEJVPU3K2Y737PVEQT3HFI4NA.jpg?auth=249c3548556f9a6b20fb451a8994d78591a79ba757a0ad500c3ca94c85985e13&width=616">이미지파일</a>
+  </ul>
+  
+</body>
+</html>

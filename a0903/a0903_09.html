@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    .loc{width: 900px; margin-left: 50px; border: 1px solid black;
+    margin-top: 50px;}
+    header{position:fixed;}
+    ul{list-style: none;}
+    li{width: 225px; height: 60px; border: 0.3px solid black; background: blueviolet;
+    float: left; text-align: center; line-height: 60px; box-sizing: border-box;
+    font-weight: 600; color: yellow;}
+    section{clear: both;}
+    h3{margin-top: 80px; margin-bottom: 30px;}
+    a{text-decoration: none; color:inherit;} /* 링크 밑줄, 클릭하면 색 바뀌는거 없애주는거 */
+    img{width: 900px;}
+  </style>
+</head>
+<body>
+  <div id="main" class="loc">
+    <header>
+      <ul>
+        <li><a href="#img1">장원영</a></li>
+        <li><a href="#img2">안유진</a></li>
+        <li><a href="#img3">민지</a></li>
+        <li><a href="#img4">윈터</a></li>
+      </ul>
+    </header>
+    <section>
+      <h3 id="img1">장원영사진</h3>
+      <p>
+        <img src="images/won1.jpg">
+        <img src="images/j02.jpg">
+        <img src="images/j03.jpg">
+      </p>
+      <div><a href="#main">top↑</a></div>
+      <h3 id="img2">안유진사진</h3>
+      <p>
+        <img src="images/an01.jpg">
+        <img src="images/an02.jpg">
+        <img src="images/an03.jpg">
+      </p>
+      <div><a href="#main">top↑</a></div>
+      <h3 id="img3">민지사진</h3>
+      <p>
+        <img src="images/min01.jpg">
+        <img src="images/min02.jpg">
+        <img src="images/min03.jpg">
+      </p>
+      <div><a href="#main">top↑</a></div>
+      <h3 id="img4">윈터사진</h3>
+      <p>
+        <img src="images/win01.jpg">
+        <img src="images/win02.jpg">
+        <img src="images/win03.jpg">
+      </p>
+      <div><a href="#main">top↑</a></div>
+    </section>
+  </div>
+  
+</body>
+</html>

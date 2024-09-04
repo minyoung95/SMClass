@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>usemap</title>
+  <style>
+  </style>
+</head>
+<body>
+  <!--
+    <a href="https://namu.wiki/w/%EB%AF%BC%EC%A7%80(NewJeans)">
+      <img src="images/min02.jpg">
+    </a> a태그는 사진 하나에 여러링크를 달수가 없음. 
+  -->
+    
+  <img src="images/event01.jpg" usemap="#event"> <!-- usemap을 이용하면 하나의 이미지에 여러링크를 달 수 있다. -->
+  <map name="event">
+    <area shape = "rect" coords="0,0,720,240"
+    href ="https://shop.kt.com/display/olhsPlan.do?plnDispNo=2434&cmpid=tf_shop_wless_240626-cpc-5gph_folderble6-google-%EA%B0%A4%EB%9F%AD%EC%8B%9C&gad_source=1&gclid=EAIaIQobChMIgJClybWmiAMVstEWBR3sKjwIEAAYASAAEgJi7vD_BwE"
+    target="_blank"> <!-- rect : 사각형 coords = "좌표" -->
+    <area shape = "circle" coords="185,450,90"
+    href ="https://www.samsung.com/sec/smartphones/galaxy-z-flip6/buy"
+    target="_blank">
+    <!-- poly : 오각형 은 시계방향 or 반시계방향 으로 순서대로 좌표를 적어준다. -->
+  </map>
+</body>
+</html>
