@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  <title>Document</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    #main{width: 800px; height: 500px; border: 3px soild black; margin-left: 30px; margin-top: 30px;}
+    h2{margin-top: 20px; margin-bottom: 20px;}
+    #address1{width: 500px;}
+    #address2{width: 537px;}
+    #pwTxt{font-weight: 700;}
+    .on{color : blue;}
+    .off{color : red}
+  </style>
+</head>
+<body>
+  <div id="main">
+    <h2>기본정보</h2>
+      <form action="" method= "get" name="frm">
+        <label>이름</label>
+        <input type="text" name="name" id="name"><br/>
+        <label>아이디</label>
+        <input type="text" name="id" id="id">
+        <button type="button">아이디중복확인</button><br/>
+        <label>비밀번호</label>
+        <input type="password" name="pw" id="pw"><br/>
+        <label>비밀번호 확인</label>
+        <input type="password" name="pwc" id="pwc" onkeyup="onk()"> <!-- onkeyup : -->
+        <span id="pwTxt"></span><br/>
+        <label>생년월일 / 성별</label>
+        <input type="date" name="birthday" id="birthday">
+        <input type="radio" name="gender" id="male">
+        <label for="male">남자</label>
+        <input type="radio" name="gender" id="female">
+        <label for="female">여자</label><br/>
+        <label>이메일</label>
+        <input type="text" name="email1" id="email1">@
+        <input type="text" name="email2" id="email2">
+        <select name="email3" id="email3" onchange = "onc()">
+          <option value = "">메일주소선택</option>
+          <option value = "naver.com">naver.com</option>
+          <option value = "gmail.com">gmail.com</option>
+          <option value = "daum.net">daum.net</option>
+        </select>
+        <button type="button">인증코드발송</button><br/>
+        <input type="text" name="email4" id="email4">
+        <button type="button">인증 확인</button><br/>
+        <label>우편번호</label>
+        <input type="text" name="zipcode" id="zipcode">
+        <button type="button" onclick="addBtn()">주소검색</button><br/>
+        <label>주소</label>
+        <input type="text" name="address1" id="address1"><br/>
+        <input type="text" name="address2" id="address2">
+      </form>
+      <script>
+        function onk(){
+         // console.log(document.getElementById("pw").value);
+         // console.log(document.getElementById("pwc").value);
+
+          var pw = document.getElementById("pw").value;
+          var pwCheak = document.getElementById("pwc").value;
+
+
+          if(pw == pwCheak){
+           // console.log("비밀번호가 일치합니다.");
+            document.getElementById("pwTxt").innerText = "비밀번호가 일치합니다.";
+            document.getElementById("pwTxt").classList.remove("off"); // class에 off를 제거해줘
+            document.getElementById("pwTxt").classList.add("on"); // class에 on을 추가해줘
+          }else{
+           // console.log("비밀번호가 일치하지않습니다.")
+            document.getElementById("pwTxt").innerText = "비밀번호가 일치하지않습니다.";
+            document.getElementById("pwTxt").classList.add("off");
+            document.getElementById("pwTxt").classList.remove("on");
+          }
+        }
+
+        function onc(){
+        var email = document.getElementById("email3").value;
+        
+        if(email == ""){
+          document.getElementById("email2").readOnly = false;
+          document.getElementById("email2").value = "";
+          document.getElementById("email2").focus();
+        }else{
+          document.getElementById("email2").readOnly = true;
+          document.getElementById("email2").value = email;
+        }
+      }
+        function addBtn(){
+          new daum.Postcode({
+          oncomplete: function(data) {
+            document.getElementById("zipcode").value = data.zonecode; // input value값에 넣기
+            document.getElementById("address1").value = data.address;
+          }
+          }).open();
+        }
+      
+      </script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>form<!-- 데이터를 받는것 --></title>
+  <style>
+    #id{width: 500px;}
+  </style>
+</head>
+<body>
+  <form action="http://www.daum.net" name="frm" method="get">
+    <label>아이디</label>
+    <input type="text" name="id" id="id" value="abcde" maxlength="5"> <br/> 
+    <!-- id : 위치를 찾아갈때 필요, 주소 / value : 미리 값이 입력되어있음. / maxlength : 입력할수 있는 자릿수 -->
+    <label>패스워드</label>
+    <input type="password" name="pw"> <br/>
+    <label>전화번호</label>
+    <input type="text" name="phone" readonly=""> <!-- readonly : 내용을 보기만하고 입력은 되지 않게함--> <br/>
+    <label>성별</label><br/>
+    <input type="radio" name="gender" id= "male" value="male"> <!-- 데이터를 입력할 수 없을때 value를 넣어줌 -->
+    <label for="male">남자</label> <!-- for : 글자를 눌러도 선택되게 만들어줌.-->
+    <input type="radio" name="gender" id="female" value="female">
+    <label for="female">여자</label>
+    <br/>
+    <label>학년</label><br/>
+    <input type="radio" name="grade" id= "one" value="one">
+    <label for="one">1학년</label> 
+    <input type="radio" name="grade" id="two" value="two" checked> <!-- checked : 디폴트값을 (체크가 되어있게) 만들어줌 -->
+    <label for="two">2학년</label>
+    <input type="radio" name="grade" id="three" value="three">
+    <label for="three">3학년</label>
+    <br/>
+    <label>반</label><br/>
+    <input type="number" name="stuClass"> 반 <br/>
+    <label>취미</label><br/>
+    <input type="checkbox" name="hobby" id = "game" value="game">
+    <label for="game">게임</label>
+    <input type="checkbox" name="hobby" id = "sing" value="sing">
+    <label for="sing">노래부르기</label>
+    <input type="checkbox" name="hobby" id = "bowling" value="bowling">
+    <label for="bowling">볼링</label>
+    <input type="checkbox" name="hobby" id = "exercise" value="exercise">
+    <label for="exercise">운동</label>
+    <input type="checkbox" name="hobby" id = "tennis" value="tennis">
+    <label for="tennis">테니스</label><br/>
+    <textarea name="content" cols="50" rows="20"></textarea><br/><!-- textarea : text는 한줄밖에 못씀 여러줄 쓰고싶을때 사용 / cols 가로줄 rows 세로줄-->
+
+    <input type="submit" value="로그인"><br/> <!-- submit : 버튼 (form action 주소로 바로보내줌) -->
+
+    <script>
+      function frmBtn(){
+        alert("함수를 호출합니다.");
+        var id = document.getElementById("id").value; // document에서 ()의 위치의 value를 찾아줘
+        
+        if(id == ""){
+          alert("아이디를 입력하세요.");
+        }else{alert("input박스에 입력된 id값 : " +id);}
+      }
+    </script>
+
+
+    <button type="button" onclick="frmBtn()">로그인</button> <!-- onclick : js를 호출하겠다. -->
+  </form>
+  
+</body>
+</html>

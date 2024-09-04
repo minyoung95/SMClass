@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #txt{width: 600px; height: 100px; border: 1px solid black; text-align: center; font-size: 30px; line-height: 60px;}
+  </style>
+</head>
+<body>
+  <form action="" method="get" name="frm">    
+    <label>이메일</label><br/>
+    <input type="text" name="email1" id="email1" onkeyup="ekey()">@
+    <input type="text" name="email2" id="email2">
+    <select name= "email3" id= "email3" onchange="echg()"> <!-- onchange : 선택할때 상호작용하게 해주는 속성-->
+      <option value="">직접입력</option>
+      <option value="naver.com">naver.com</option>
+      <option value="gmail.com">gmail.com</option>
+      <option value="daum.net">daum.net</option>
+    </select><br/>
+    <button type="button" onclick="ebtn()">버튼</button>
+  </form>
+  <div id="txt"></div>
+    <script>
+      function ekey(){
+        var emailTxt = document.getElementById("email1").value // 변수 emailTxt는 email1의 벨류값이다.
+        console.log(emailTxt); // 콘솔에 변수 emailTxt를 나타내라
+        document.getElementById("txt").innerText = emailTxt; // txt위치에 emailTxt라는 글자를 넣어줘라.
+      }
+      
+      function echg(){
+        // alert("echg 함수호출");
+        var email = document.getElementById("email3").value; // 변수 email은 email3의 벨류값이다.
+
+        if(email == "" ){
+          document.getElementById("email2").readOnly = false; // readOnly(읽기전용)를 하지말고
+          document.getElementById("email2").value = ""; // email2 자리를 비워둬라 (데이터 x)
+          document.getElementById("email2").focus(); // 커서를 email2 자리에 바로 가게 만들기
+        }else{
+          document.getElementById("email2").value = email; // email2자리에 변수 email(email3의 벨류값)을 넣어라
+          document.getElementById("email2").readOnly = true; // readOnly (수정이 가능하지않게) 바꿔라
+        }
+      }
+      
+      function ebtn(){
+        alert("함수호출");
+      }
+      </script>
+  
+</body>
+</html>
