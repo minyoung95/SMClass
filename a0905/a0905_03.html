@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>텍스트 관련 스타일</title>
+  <style>
+    h3{width: 300px; height: 100px; border:1px solid black;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; /* 정해진 공간이 넘어가면 말 줄임표(...)이 생김 */}
+    h3:hover{/* hover : 마우스가 올라갔을 때 */
+      overflow: visible; /* 공간에 안맞는 부분도 다 보일수 있게 */
+      white-space: normal; /* 글이 공간에 맞춰 아래로 쭉 내려지게 */} 
+    div{width: 300px; height: 100px; border: 1px solid black;
+      /* white-space: nowrap - 정해진 공간에 상관없이 글이 쭉 써짐(?) */;
+      overflow: hidden; /* 어떠한 공간의 바깥으로 나가면 숨김처리가 된다. 
+      overflow: scroll - 정해진 공간에서 스크롤이 생겨 올리고 내릴수있음. */}
+    h2{width: 800px; height: 200px; border: 1px solid black;
+      color : rgb(138, 43, 226, 0.2);
+      margin: 0 auto; /* 사각모델 가운데 정렬 */
+      letter-spacing: 30px; word-spacing: 30px;
+      text-shadow: 10px 10px 30px blue;
+      text-decoration: line-through;
+      font-size: 50px; line-height: 150px; text-align: center;
+      line-height: 190px;}
+    p{width: 400px; height: 500px; border: 1px solid black;
+      font-size: 17px; font-weight: 700;
+      line-height: 60px; /* line-height : 줄 간격 (위 아래 30px씩), 세로정렬 */
+      text-align: justify;}
+  </style>
+</head>
+<body>
+  <h3>기자협회보가 사실확인을 요청한 결과 국방부는 서울시 용산구 국방부 종합민원실은 “군사보호구역과 밀접해 있는 일반시설구역”이라고 8월27일 최종 답변했다.</h3>
+  <div>
+    기자들의 통행과 취재를 경찰이 부당하게 막아 세웠다며 국가인권위원회에 진정이 제기된 가운데 국방부가 민원실은 군사보호구역이 아니라고 설명했다. 애초 경찰은 민원실이 군사보호구역으로 촬영이 불가능하다며 취재를 막았다. 국방부 부지 안에 있는 대통령실 때문에 주변에서 과잉경호를 벌이고 있다는 비판이 나온다.
+  </div>
+  <h2>글꼴 관련 스타일</h2>
+  <p>
+    기자들의 통행과 취재를 경찰이 부당하게 막아 세웠다며 국가인권위원회에 진정이 제기된 가운데 국방부가 민원실은 군사보호구역이 아니라고 설명했다. 애초 경찰은 민원실이 군사보호구역으로 촬영이 불가능하다며 취재를 막았다. 국방부 부지 안에 있는 대통령실 때문에 주변에서 과잉경호를 벌이고 있다는 비판이 나온다.
+
+    기자협회보가 사실확인을 요청한 결과 국방부는 서울시 용산구 국방부 종합민원실은 “군사보호구역과 밀접해 있는 일반시설구역”이라고 8월27일 최종 답변했다. 용산 국방부 청사와 일대는 군사보호구역이지만 민원실은 여기서 제외된다는 것이다. 국방부는 사실관계를 질의한 뒤 내부검토를 거쳐 닷새 만에 답변을 내놓았다.
+  </p>
+</body>
+</html>

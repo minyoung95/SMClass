@@ -18,7 +18,7 @@
     <label>전화번호</label>
     <input type="text" name="phone" readonly=""> <!-- readonly : 내용을 보기만하고 입력은 되지 않게함--> <br/>
     <label>성별</label><br/>
-    <input type="radio" name="gender" id= "male" value="male"> <!-- 데이터를 입력할 수 없을때 value를 넣어줌 -->
+    <input type="radio" name="gender" id= "male" value="male"> <!-- value를 넣지않으면 서버로 데이터를 보낼수없음 -->
     <label for="male">남자</label> <!-- for : 글자를 눌러도 선택되게 만들어줌.-->
     <input type="radio" name="gender" id="female" value="female">
     <label for="female">여자</label>
@@ -60,7 +60,7 @@
     </script>
 
 
-    <button type="button" onclick="frmBtn()">로그인</button> <!-- onclick : js를 호출하겠다. -->
+    <button type="button" onclick="frmBtn()">로그인</button> <!-- type="button" : 버튼을 눌러 데이터를 보내고 싶지 않을때 사용. onclick : js를 호출하겠다. -->
   </form>
   
 </body>
