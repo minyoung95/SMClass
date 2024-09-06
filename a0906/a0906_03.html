@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div{height: 200px; background: yellow; margin-bottom: 30px;
+    /* border: 10px dashed black; */ 
+       border-width : 5px; /* 1 5 7 10 : top right bottom left 순, 1 10 : (top,bottom), (left,right) 순, 1 5 10 : top, (right,left), bottom 순 */
+       border-style : solid; 
+       border-color: black;}
+    .c01{width: 1000px; border-radius: 20px;}
+    .c02{width:50% /* 반응형 사이트에 사용 : 화면의 크기에 따라 넓이가 달라짐*/}
+    .c03{width: 200px; height: 200px; border-radius: 100px; /* 넓이의 반을 반지름 : 원모양으로 된다. */ 
+      background: url(images/min02.jpg) no-repeat;
+      background-size: 100%} 
+    .c03:hover{background-size: 120%;
+      background-position: -25px -20px;
+      cursor: pointer;
+      box-shadow: 5px 5px 30px 10px gray;}
+  </style>
+</head>
+<body>
+  <div class="c01">1</div>
+  <div class="c02">2</div>
+  <div class="c03">3</div>
+  
+</body>
+</html>
