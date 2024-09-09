@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>블록요소,인라인요소</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    img{width: 200px; display: inline-block;} /* 이미지는 인라인요소(넓이와 높이를 정할수 없음)지만 넓이와 높이값을 가질수 있음 */
+    #i01:hover{visibility: hidden;/* display: none - 위치값과 함께 이미지를 사라지게 함. visibility: hidden - 위치값은 존재하고 이미지만 사라지게 함 */}
+    /* hover : 마우스를 올릴때 상호작용*/
+    span{width: 200px; height: 100px; display: inline-block;} /* 인라인요소에 넓이와 높이를 주고싶을때 block요소를 추가 */
+    /* 인라인 요소는 마진,패팅 탑/바텀은 적용이 안된다. */
+    #s01{background: yellow; border: 3px solid black;}
+    #s02{background: green; border: 3px solid black;}
+    #s03{background: gray; border: 3px solid black;}
+  </style>
+</head>
+<body>
+  <span id="s01">가나다</span>
+  <span id="s02">가나다</span>
+  <span id="s03">가나다</span><br/><br/>
+  <button>버튼</button>
+  <img src="images/a01.jpg">
+  <img src="images/a02.jpg" id="i01">
+  <img src="images/a03.jpg">
+  
+</body>
+</html>

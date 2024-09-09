@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COOKET 실습</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+    *{margin: 0; padding: 0; text-decoration: none; color: inherit;
+    list-style: none;
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;}
+    .top_menu{width: 100%; height: 35px; background: #202020;}
+    .top_menu ul{display: flex; float: right; color: white;
+    width: 480px; height: 25px; font-size: 13px;
+    margin-top:7px; margin-right: 40px;}
+    .top_menu li{width: 100px; height: 25px; text-align: center;
+    box-sizing: border-box;}
+    .top_menu #top_menu_1{width: 70px;}
+    .top_menu #top_menu_2{width: 60px;}
+    .top_menu #top_menu_3{width: 90px;}
+    .top_menu #top_menu_4{width: 90px;}
+    .top_menu #top_menu_5{width: 100px;}
+    nav{display: flex; width: 100%; height: 82px;
+    border-bottom: 1px solid black;}
+    .main{width: 200px; height: 82px;
+    padding-top: 25px; padding-left: 45px;
+    box-sizing: border-box;}
+    .main h1{width: 100px; height: 30px;
+    background: url('images/ico_set.png') -320px -385px no-repeat;
+    background-size: 800px 800px;}
+    .menu{width: 80%; height: 82px; }
+    .menu ul{display: flex; width: 750px; height: 82px;
+    margin: 0 auto; text-align: center; box-sizing: border-box;
+    padding-top: 25px; padding-left: 20px;}
+    .menu li{width: 150px; font-size: 22px; font-weight: 700;
+    color: #101010;}
+    .menu li:hover{border-bottom: 3px solid black;}
+    .menu #menu1{width: 160px;}
+    .menu #menu2{width: 160px;}
+    .menu #menu3{width: 100px;}
+    .menu #menu4{width: 110px;}
+    .menu #menu5{width: 120px;}
+    .quick_menu{width: 250px; height: 82px;
+    display: flex; text-align: center;}
+    .quick_menu ul{width: 70px; height: 52px; margin-top: 20px;
+    margin-left: 20px;}
+    .quick_menu ul li{width: 60px; height: 20px;
+    font-size: 12px; font-weight: 700; color: #101010;}
+    .quick_menu #quick_menu1{width: 32px; height: 32px;
+    display: inline-block;
+    background: url('images/ico_set.png') -584px -320px no-repeat;
+    background-size: 800px 800px;}
+    .quick_menu #quick_menu2{width: 32px; height: 32px;
+    display: inline-block;
+    background: url('images/ico_set.png') -628px -320px no-repeat;
+    background-size: 800px 800px;}
+    .quick_menu div{width: 50px; height: 20px;
+    position: relative; left: 5px;}
+    section{width: 100%; height: 640px;
+    background: url(images/main_top.jpg) no-repeat;
+    background-size: cover;}
+    .top_img{width: 600px; height: 450px; color: #fff; border: 1px solid black;}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="top_menu">
+      <ul>
+        <li id="top_menu_1"><a href="#"></a>회원가입</li>
+        <li id="top_menu_2"><a href="#"></a>로그인</li>
+        <li id="top_menu_3"><a href="#"></a>고객행복센터</li>
+        <li id="top_menu_4"><a href="#"></a>배송정보검색</li>
+        <li id="top_menu_5"><a href="#"></a>기프트카드 등록</li>
+      </ul>
+    </div>
+    <nav>
+    <div class="main"><h1></h1></div>
+    <div class="menu">
+      <ul>
+        <li id="menu1"><a href="#"></a>COOKIT소개</li>
+        <li id="menu2"><a href="#"></a>COOKIT메뉴</li>
+        <li id="menu3"><a href="#"></a>리뷰</li>
+        <li id="menu4"><a href="#"></a>이벤트</li>
+        <li id="menu5"><a href="#"></a>MY쿡킷</li>
+      </ul>
+    </div>
+    <div class="quick_menu">
+      <ul>
+        <li>
+          <a href="#" id="quick_menu1"></a>
+          <div>장바구니</div>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <a href="#" id="quick_menu2"></a>
+          <div>메뉴찾기</div>
+        </li>
+      </ul>
+    </div>
+    </nav>
+  </header>
+  <section>
+    <div class="top_img">
+      <h2>NEW</h2>
+      <h3>3/16 신메뉴 출시</h3>
+      <h4>따끈한 소울푸드<br/>
+          황태콩나물 해장국
+      </h4>
+      <span>3인분</span>
+      <span>조리 15분</span>
+      <h5>16,800원<span></span></h5>
+      <div>
+        <a href="#" class="section a01"></a>
+        <span>1/5</span>
+        <a href="#" class="section a02"></a>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
