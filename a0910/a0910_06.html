@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    li{width: 120px; height: 40px; text-align: center; border: 1px solid black;
+    line-height: 40px;}
+    .gr{background: yellow;}    
+    .tom{background: pink;}    
+    .si{background: green;}    
+    .bro{background: green;}    
+    .peanut{background: yellow;}  
+    #u01{color: blue; font-weight: 900;}
+    #u01 li:nth-child(2n+1){font-size: 25px; font-weight: 800;}
+    #u01 li:nth-child(2), #u01 li:nth-child(7){background: yellow;}
+    #u01 li:nth-child(3){background: pink;}
+    #u01 li:nth-child(4), #u01 li:nth-child(6){background: green;}
+    #u01 li:nth-last-child(){border-bottom-left-radius: 10px;} 
+    #u01 li:first-child{border-top-left-radius: 10px; border-top-right-radius: 10px;} 
+    #u01 li:last-child{border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;} 
+    #u03 li:nth-of-type(2), #u03 li:nth-of-type(7){background: yellow;}
+  </style>
+</head>
+<body>
+  <h2>건강에 좋은 식품1</h2>
+  <ul id="u01">
+    <li>블루베리</li>
+    <li>귀리</li>
+    <li>토마토</li>
+    <h2>h2태그</h2> <!-- h2태그가 들어가서 nth-child 의 순서가 1개 추가된다.(h2태그도 자식요소 취급) -->
+    <li>시금치</li>
+    <li>적포도주</li>
+    <li>브로콜리</li>
+    <li>견과류</li>
+  </ul>
+  <hr>
+  <h2>건강에 좋은 식품2</h2>
+  <ul>
+    <li>블루베리</li>
+    <li class="gr">귀리</li>
+    <li class="tom">토마토</li>
+    <li class="si">시금치</li>
+    <li>적포도주</li>
+    <li class="bro">브로콜리</li>
+    <li class="peanut">견과류</li>
+  </ul>
+  <hr>
+  <h2>건강에 좋은 식품3</h2>
+  <ul id="u03">
+    <li>블루베리</li>
+    <li>귀리</li>
+    <li>토마토</li>
+    <h2>h2태그</h2>
+    <li>시금치</li>
+    <li>적포도주</li>
+    <li>브로콜리</li>
+    <li>견과류</li>
+  </ul>
+  
+</body>
+</html>
