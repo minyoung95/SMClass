@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    .main{width: 200px; height: 200px; border: 1px solid black;
+    margin: 50px auto; overflow: hidden; /* 삐져나온거 없애기 */
+    /* perspective: 200px; 원근감 */}
+    .move{transition: 0.3s all ease-in;}
+    .move:hover{transform: rotateX(180deg);
+      backface-visibility: visible; /* 반대쪽 면 표시 */
+    /* transform: rotateY(180deg); 
+       transform: rotateZ(180deg);  - 회전
+       transform: scale(1.5) - 크기변형
+       transform: translate(200px, 50px) - 이동
+       transform-origin: left top; - 기준점
+       transform: skewX(30deg) - 기울기*/;}
+ 
+    .move img{width: 200px;}
+  </style>
+</head>
+<body>
+  <div class="main">
+    <div class="move">
+      <img src="images/t01.png">
+    </div>
+  </div>
+  <hr>
+  <div class="main">
+    <div class="move">
+      <img src="images/min02.jpg">
+    </div>
+  </div>
+</body>
+</html>

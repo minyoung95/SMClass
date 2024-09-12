@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    header{width: 900px; height: 300px; margin: 30px auto;
+    border: 2px solid black; display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center; /* justify-content 가로정렬 */
+    align-items: flex-end; /* align-items 세로정렬 */}
+    div{width: 100px; height: 100px; background: yellow;
+    border: 5px solid black; box-sizing: border-box;}
+  </style>
+</head>
+<body>
+  <header>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+  </header>  
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transition</title>
+  <style>
+    .d01{width: 100px; height: 100px;
+    background: skyblue; border: 3px solid black;
+    transition-property: width, height, border-radius; /* 어떤요소를 변형할 것인지 : width 만 지정 */
+    transition-duration: 1s; /* 얼마만에 변형할 것인지 : 1초 */
+    transition-timing-function: ease-in; /* 점점빨라지게, 점점느려지게 */
+    transition-delay: 1s; /* 몇초 뒤에 시작할 것인지 */
+    /* transition : all 1s ease-in 1s - 합치기 */}
+    .d01:hover{width: 200px; height: 200px; background: blueviolet;
+    border-radius: 50%;}
+  </style>
+</head>
+<body>
+  <div class="d01">
+
+  </div>
+  
+</body>
+</html>
