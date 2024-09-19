@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    var str = "문자열";
+    var str2 = "30";
+    var num1 = 10;
+    var num2 = 20.5;
+    var b = true;
+    var c;
+    var d = null;
+
+    document.write("출력 : "+str+"<br/>");
+    document.write("출력 : "+str2+"<br/>");
+    document.write("출력 : "+num1+"<br/>");
+    document.write("출력 : "+num2+"<br/>");
+    document.write("출력 : "+b+"<br/>");
+    document.write("출력 : "+c+"<br/>");
+    document.write("출력 : "+d+"<br/>");
+    document.write("더하기 : "+num1+num2+"<br/>"); // 문자 + 숫자 + 숫자 : 연결시키기
+    document.write("더하기 : "+(num1+num2)+"<br/>"); // 숫자 + 숫자 : 더하기
+    document.write("더하기 : "+(str2+num1)+"<br/>"); // 문자 + 숫자 : 연결시키기
+
+    document.write("<hr>");
+
+    var number = 10;
+    var number2 = 20;
+    var number3 = number + number2; // Number 타입
+    var n = 2;
+    var number4 = number + number2 + ""; // String 타입
+    var b = true;
+
+    document.write(number3+n); // 숫자 + 숫자 = 숫자형 (Number)
+    document.write("<br/>");
+    document.write(number4+n); // 문자 + 숫자 = 문자열 (String)
+    document.write("<br/>");
+    document.write(typeof(number3)); // typeof() : 타입이 무엇인지 알려준다.
+    document.write("<br/>");
+    document.write(Number(number4)); // Number() : 숫자형으로 바뀌준다.
+    document.write("<br/>");
+
+    document.write(number+number2+"는 30입니다."+"<br/>"); // 숫자가 먼저 더해지고 문자가 연결된다. (String 타입)
+    document.write("출력 : "+number+number2+"<br/>"); // 문자와 숫자가 먼저 연결되므로 그 뒤 숫자도 연결된다. (String 타입)
+  </script>
+</head>
+<body>
+
+  
+</body>
+</html>
