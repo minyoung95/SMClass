@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>for문</title>
+  <style>
+    .red{color: red; font-size: 16px; font-weight: 600;}
+    .green{color: green; font-size: 16px; font-weight: 600;}
+    .gray{background: gray;}
+    table{width: 800px; margin: 0 auto; text-align: center;}
+    td, th{width: 200px; height: 40px;}
+    th{background: #efefef;}
+    table, th, td{border: 1px solid black; border-collapse: collapse;}
+  </style>
+</head>
+<body>
+  <script>
+    
+    // for(var i = 1; i < 101; i++){
+    //   if(i % 2 == 0){
+    //     document.write("<p class='green'>"+i+"</p>");
+    //     document.write(`<p class='green'>${i}</p>`); // `${변수}`
+    //   }else{
+    //     document.write("<p class='red'>"+i+"</p>");
+    //   }
+    // }
+
+
+
+  </script>
+  <table>
+    <tr>
+      <th>번호</th>
+      <th>제목</th>
+      <th>작성일</th>
+      <th>조회수</th>
+    </tr>
+
+  </table>
+
+  <script>
+
+    for(var i = 1; i < 21; i++){
+      if(i%2 == 1){
+      document.write(`<tr class='gray'><td>${i}</td><td>이벤트 안내</td><td>2024-09-20</td><td>1004</td></tr>`)
+      }else{
+      document.write(`<tr><td>${i}</td><td>이벤트 안내</td><td>2024-09-20</td><td>1004</td></tr>`)        
+      }
+    }
+  </script>
+</body>
+</html>

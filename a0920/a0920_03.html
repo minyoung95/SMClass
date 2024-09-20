@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>조건(삼항)연산자</title>
+</head>
+<body>
+  <script>
+    var a = 10;
+    var b = 3;
+    var result = (a > b) ? "정답입니다" : "오답입니다" // (조건) ? true일때 : false일때
+    document.write(result+"<br/>");
+    document.write("--------------------------------"+"<br/>")
+
+    var c = Number(prompt("숫자1을 입력하시오"));
+    var d = Number(prompt("숫자2를 입력하시오"));
+    var e = Number(prompt("숫자3를 입력하시오"));
+    var result2 = (c > d) ? (c > e ? c : e) : (d > e ? d : e);
+    document.write("3개 숫자중 가장 큰수 : "+result2+"<br/>");
+    document.write("입력한 숫자 : "+c+","+d+","+e+"<br/>");
+  </script>
+  
+</body>
+</html>

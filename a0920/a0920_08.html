@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>switch</title>
+</head>
+<body>
+  <script>
+    
+    var score = Number(prompt("점수를 입력하시오."));
+    score = parseInt(score / 10);
+
+    var result = "";
+    switch(score){
+      case 10: case 9:// 값이 딱 떨어져야만 함, 90<score(이런거 안댐)
+        result = "A";
+        break;
+      case 8:
+        result = "B";
+        break;
+      case 7:
+        result = "C";
+        break;
+    }
+
+    document.write(result);
+    // var site = prompt("네이버, 다음, 네이트, 구글을 선택하세요.");
+
+    // var result = "";
+
+    // switch(site){
+    //   case "구글":
+    //     result = "구글 : http://www.google.com";
+    //     break;
+    //   case "네이버":
+    //     result = "네이버 : http://www.naver.com";
+    //     break;
+    //   case "다음":
+    //     result = "다음 : http://www.daum.net";
+    //     break;
+    //   case "네이트":
+    //     result = "네이트 : http://www.nate.com";
+    //     break;
+      
+    // }
+
+    //document.write(result);
+    //location.href = result;
+  </script>
+  
+</body>
+</html>

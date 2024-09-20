@@ -1,0 +1,44 @@
+*{margin: 0; padding: 0;}
+.header{width: 650px; height: 54px; background: #0AAF6B;
+padding: 15px 20px 15px 40px; box-sizing: border-box;}
+.header h1{font-size: 18px; font-weight: 700; color: #fff;
+letter-spacing: -0.03em;}
+.main{width: 650px; height: 1000px; border: 1px solid black;
+padding-top: 25px; letter-spacing: -0.03em;}
+.message{width: 610px; height: 122px; box-sizing: border-box;
+padding: 25px; margin: 0 auto; background: #f8f8f8;}
+.message span{width: 560px; height: 72px;
+font-size: 14px; color: #454545; line-height: 25px;}
+.form{width: 610px; height: 238px; margin: 10px auto;
+padding: 25px; box-sizing: border-box; border: 1px solid #e8e8e8;
+position: relative;}
+label{font-size: 15px; font-weight: 700; margin-right: 12px;}
+.dash{font-size: 16px; color: #b7b7b7; margin: 0 15px;}
+#height, #weight{width: 50px; height: 27px; margin-right:5px;
+padding: 0 5px; text-align: center; border: 1px solid #ddd;
+vertical-align: middle; font-size: 16px;}
+.cal{font-size: 12px; position: absolute; right: 18px;}
+.cal #btn1{width: 70px; height: 27px; color: #fff; font-weight: 700;
+background: #0aaf6b; cursor: pointer; margin-right: 5px;
+border: none;}
+.cal #btn2{width: 70px; height: 27px; color: #fff; font-weight: 700;
+background: #656565; cursor: pointer; margin-right: 5px;
+border: none;}
+.clearfix{width: 558px; height: 48px; margin: 10px 0 18px;
+line-height: 24px;}
+.clearfix dt{width: 20%; float: left; font-size: 14px;}
+.clearfix dd{width: 80%; font-size: 14px; font-weight: 700;
+color: #eb4f3a;}
+ul{width: 558px; height: 83px; list-style: none;}
+li label{width: 21%; font-size: 13px; font-weight: 700; letter-spacing: -0.03em;
+display: inline-block; width: 21%; margin-right: 12px;}
+li .dv1{width: 18%;}
+li .dv2{width: 14.5%;}
+
+ul .clearfix2 li{height: 35px; font-weight: 700;  letter-spacing: -0.03em;
+line-height: 35px; text-align: center; color: white; float: left;
+font-size: 13px;}
+ul .clearfix2 .low {width: 27%; background: #329ae3;}
+ul .clearfix2 .regular{width: 20%; background: #95C520;}
+ul .clearfix2 .over{width: 18%; background: #EE942A;}
+ul .clearfix2 .obesity{width: 35%; background: #F15232;}

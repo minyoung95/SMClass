@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .red{color: red; font-weight: 600; font-size: 16px;}
+    .green{color: green; font-weight: 600; font-size: 16px;}
+  </style>
+</head>
+<body>
+  <script>
+    //1~20 숫자 출력하는데, 홀수는 red, 짝수는 green
+
+    for(var i = 1; i < 21; i ++){
+      if(i % 2 == 1){
+        document.write(`<p class='red'>${i}</p>`);
+      }else{
+        document.write(`<p class='green'>${i}</p>`);
+      }
+    }
+
+  </script>
+</body>
+</html>

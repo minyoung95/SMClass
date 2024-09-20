@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>산술연산자</title>
+</head>
+<body>
+  <script>
+    var num = 10;
+    var num2 = 5;
+    num += num2;
+    document.write(num+"<br/>");
+
+    var num3 = 1;
+    num3++;
+    document.write(num3+"<br/>");
+
+    for(var i=0;i<10;i++){
+      document.write(i);
+    }
+    
+    document.write("<br/>-------------------------------<br/>")
+
+    var a = 10;
+    var b = 20;
+    var c = 10;
+    var d = "20";
+    var result = a>b; // false
+    document.write(result+"<br/>");
+    var result2 = a<b; // true
+    document.write(result2+"<br/>");
+    var result3 = b == d; // true
+    var result4 = b === d; // false
+    var result5 = a != c; // false
+    document.write(result3+"<br/>");
+    document.write(result4+"<br/>");
+    document.write(result5+"<br/>");
+
+    document.write("<br/>-------------------------------<br/>")
+
+    var A = 10;
+    var B = 20;
+    var C = 30;
+    var D = 40;
+
+    var or = a>b || c>a; // OR : 두개 중 하나만 true 여도 true
+    var and = b>a && d>a; // AND : 두개 모두 true 일때만 true
+
+    document.write(or+"<br/>");
+    document.write(and+"<br/>");
+  
+  //   var num = Number(prompt("숫자를 입력하세요."));
+  //   var num2 = Number(prompt("숫자를 입력하세요."));
+
+  //   var result = num + num2;
+  //   document.write("더하기 : "+result+"<br/>");
+  //   var result2 = num - num2;
+  //   document.write("빼기 : "+result2+"<br/>");
+  //   var result3 = num * num2;
+  //   document.write("곱하기 : "+result3+"<br/>");
+  //   var result4 = num / num2;
+  //   document.write("나누기 : "+result4+"<br/>");
+  //   var result4 = num / num2;
+  //   document.write("몫 : "+parseInt(result4)+"<br/>");
+  //   var result5 = num % num2;
+  //   document.write("나머지 : "+result5+"<br/>");
+  </script>
+</body>
+</html>
