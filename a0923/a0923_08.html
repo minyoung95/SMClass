@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 오늘 날짜를 출력하시오 : 2024/09/23/ 월요일
+
+    var today = new Date();
+
+    var year = today.getFullYear();
+    var month = today.getMonth();
+    var txtmonth = month + 1;
+    if (month < 10){
+      txtmonth = "0" + txtmonth
+    }
+    var date = today.getDate();
+    var day = today.getDay();
+
+    if(day===0){
+      txtday = "일요일";
+    }else if(day===1){
+      txtday = "월요일";
+    }else if(day===2){
+      txtday = "화요일";
+    }else if(day===3){
+      txtday = "수요일";
+    }else if(day===4){
+      txtday = "목요일";
+    }else if(day===5){
+      txtday = "금요일";
+    }else{
+      txtday = "토요일";
+    }
+
+    document.write(year + "/" + txtmonth + "/" + date +"/"+ txtday + "<br/>");
+
+    // 5자리 숫자를 입력받아, 숫자의 합을 구하시오.
+    // 12345 = 15 charAt
+
+    var num = prompt("숫자을 입력하세요."); // charAt는 문자열일때만 가능하기때문에 숫자열로 바꾸기 x
+    var total = 0;
+    for(i=0; i<7; i++){
+      total += Number(num.charAt(i));
+    }
+    document.write(total);
+
+    var n1 = Number(num.charAt(0));
+    var n2 = Number(num.charAt(1));
+    var n3 = Number(num.charAt(2));
+    var n4 = Number(num.charAt(3));
+    var n5 = Number(num.charAt(4));
+    var n6 = Number(num.charAt(5));
+    var n7 = Number(num.charAt(6));
+
+    var total2 = n1 + n2 + n3 + n4 + n5 + n6 + n7;
+
+    document.write(total2);
+    
+
+
+
+  </script>
+  
+</body>
+</html>

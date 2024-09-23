@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>scroll 객체</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    #wrap{width: 2000px; height: 3000px; border: 1px solid black;}
+    #d_wrap{position: fixed;}
+    #txt{width: 200px; height: 100px; border: 1px solid black;
+    background: yellow; font-size: 30px; text-align: center;}
+    #image{width: 300px; height: 200px; border: 1px solid black;
+    background: url(images/banner.png); background-size: cover;}
+  </style>
+  <script>
+    // window 이벤트 실행문
+    window.addEventListener("scroll",function(){
+      window.scrollX;
+      window.scrollY;
+      document.getElementById("txt").innerText = window.scrollY;
+      if(window.scrollY > 2000){
+        document.getElementById("image").style.backgroundImage = "url('images/mem01.jpg')";
+      }else if(window.scrollY > 1000){
+        document.getElementById("image").style.backgroundImage = "url('images/story01.jpg')";
+      }else if(window.scrollY > 500){
+        document.getElementById("image").style.backgroundImage = "url('images/banner.png')";
+      }else{
+        document.getElementById("image").style.backgroundImage = "url('images/min02.jpg')";
+      }
+      console.log(window.scorllX);
+      console.log(window.scorllY);
+    })
+    
+    document.getElementById("b01").addEventListener("click",function(){
+      alert("버튼 클릭");
+    })
+    function btn0(){
+      window.scrollTo({top:0, behavior: "smooth"});
+    }
+    function btn1(){
+      window.scrollTo({top:501, behavior: "smooth"});
+    }
+    function btn2(){
+      window.scrollTo({top:1001, behavior: "smooth"});
+    }
+    function btn3(){
+      window.scrollTo({top:2001, behavior: "smooth"});
+    }
+
+  </script>
+</head>
+<body>
+  <div id="wrap">
+    <div id="d_wrap">
+      <div id="txt"></div>
+      <button id="b00" onclick="btn0()">처음으로</button>
+      <button id="b01" onclick="btn1()">500 이동</button>
+      <button id="b02" onclick="btn2()">1000 이동</button>
+      <button id="b03" onclick="btn3()">2000 이동</button>
+      <div id="image"></div>
+    </div>
+  </div>
+  
+</body>
+</html>
