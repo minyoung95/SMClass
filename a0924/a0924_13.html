@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <title>JQuery</title>
+  <script>
+    //제이쿼리 선언 : 문서를 다 읽고 다시 실행시킴
+    $(function(){
+      $("#d01").text("안녕하세요."); // document.querySelector("#d01").innerText = "안녕하세요.";
+      $("#d01").html("<h1>안녕하세요.</h1>"); // document.querySelector("#d01").innerHTML = "<h1>안녕하세요.</h1>";
+      $(".c01").text("반가워요."); // document.querySelector(".c01").innerText = "반가워요.";
+      $("#img").attr("src","../a0923/images/min02.jpg");// 속성값 바꾸기 document.querySelector("#img").setAttribute("src","../a0923/images/min02.jpg")
+      $("#d01").css("background","yellow"); // document.querySelector("#d01").style.backgroundColor = "yellow";
+    });
+
+  </script>
+  <style>
+    #d01{width: 300px; height: 200px; border: 1px solid black;}
+    #wrap{width: 500px; height: 400px; overflow: hidden;}
+    img{width: 100%;}
+  </style>
+</head>
+<body>
+  <div id="d01">00</div>
+  <div class="c01">00</div>
+  <div id="wrap">
+    <img id="img" src="../a0923/images/banner.png">
+  </div>
+  
+</body>
+</html>

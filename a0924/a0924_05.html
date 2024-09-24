@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>classlist</title>
+  <style>
+    h1{width: 100px; height: 60px;}
+    .cls{border: 2px solid black;}
+    .txt{font-size: 20px; font-weight: 600;}
+    .color{color: red; background-color: yellow;}
+  </style>
+</head>
+<body>
+  <h1 id="h" class="cls txt color">제목</h1>
+  <button onclick="btn()">클래스 추가/삭제</button>
+  <script>
+    function btn(){
+      alert("aa");
+      // add : 클래스 추가  contains : 클래스 존재확인,
+      // toggle : 있으면 삭제, 없으면 추가
+      console.log(document.querySelector("#h").classList);
+      // document.querySelector("#h").classList.remove("color"); remove : 클래스 삭제
+      // document.querySelector("#h").classList.add("color"); add : 클래스 추가
+      // document.querySelector("#h").classList.toggle("color"); toggle : 클래스 추가,삭제
+      // console.log(document.querySelector("#h").classList.contains("cls")); contains : 클래스 존재확인
+    
+    }
+  </script>  
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>취미</h1>
+  <form action="http://www.daum.net" name="frm" method="get" id="frm">
+    <input type="checkbox" name="hobby" id="game" class="hobby" value="game">
+    <label for="game">게임</label>
+    <input type="checkbox" name="hobby" id="sing" class="hobby" value="sing">
+    <label for="sing">노래</label>
+    <input type="checkbox" name="hobby" id="health" class="hobby" value="health">
+    <label for="health">헬스</label>
+    <input type="checkbox" name="hobby" id="book" class="hobby" value="book">
+    <label for="book">독서</label>
+    <input type="checkbox" name="hobby" id="swim" class="hobby" value="swim">
+    <label for="book">수영</label>
+    <br/>
+    <button type="button" onclick="hobbyBtn()">확인</button>
+  </form>
+  <script>
+    function hobbyBtn(){
+      //체크박스가 4개 이상 되어있지 않으면 4개이상 체크하셔야 확인 가능합니다.
+      //모두 체크 하시겠습니까? 모두 체크하시오.
+
+      var count = 0;
+      //체크가 몇개인지 확인 input[name='hobby'] [type="checkbox"] .hobby
+      console.log(document.querySelectorAll(".hobby"));
+      for(var i = 0; i < document.querySelectorAll(".hobby").length; i++){
+        if(document.querySelectorAll(".hobby")[i].checked == true){
+          count ++;
+        }
+      }
+      console.log("총 체크 갯수 : " +count)
+      
+      //비교
+      if(count < 4){
+        alert("취미를 4개 이상 하셔야 다음진행이 가능합니다.");
+        if(confirm("취미를 모두 선택할까요?")){
+          // for(var j = 0; j < document.querySelectorAll(".hobby").length; j++){
+          //   document.querySelectorAll(".hobby")[j].checked == true;
+
+            //forEach
+            document.querySelectorAll(".hobby").forEach(function(d){
+            console.log(d)
+            d.checked == true;
+            });
+            
+          }
+          return false;
+          
+        }
+        frm.submit()
+      }
+
+
+      //     //비교
+      //     if(count < 4){
+      //   alert("취미를 4개 이상 하셔야 다음진행이 가능합니다.");
+      //   return false;
+      // }
+  </script>
+  
+</body>
+</html>
