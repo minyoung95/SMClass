@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <title>Ajax</title>
+  <script>
+    $(function(){
+
+      $("#dataBtn").click(()=>{
+        alert("클릭");
+        $.ajax({
+          url: "js/stuData.json",
+          type: "get",
+          data: "",
+          dataType: "json",
+          success: function(data){
+            console.log(data);
+
+          var stu_Data = "";
+          for(i = 0; i < data.length; i++){
+            
+            var total = data[i].kor + data[i].eng + data[i].math;
+            var avr = Math.round(total / 3);
+            stu_Data += `<tr id="${data[i].no}">`
+            stu_Data += `<td>${data[i].no}</td>`
+            stu_Data += `<td>${data[i].name}</td>`
+            stu_Data += `<td>${data[i].kor}</td>`
+            stu_Data += `<td>${data[i].eng}</td>`
+            stu_Data += `<td>${data[i].math}</td>`
+            stu_Data += `<td>${total}</td>`
+            stu_Data += `<td>${avr}</td>`
+            stu_Data += `<td><button class="delBtn">삭제</button></td>`
+            stu_Data += `</tr>`
+          }
+          $("#tbody").html(stu_Data);
+          },
+          error: function(){
+            console.log("실패");
+            alert("실패");
+          }
+        })
+      })
+    })
+    $(document).on("click", ".delBtn", function(){
+      var delId = $(this).closest("tr").attr("id");
+      $("#"+delId).remove();
+    });//제이쿼리
+
+  </script>
+  <style>
+    h1{text-align: center;}
+    table, th, td{border: 1px solid black; border-collapse: collapse;}
+    table{width: 80%; margin: 0 auto;}
+    th, td{width: 150px; height: 40px; text-align: center;}
+  </style>
+</head>
+<body>
+  <h1>게시판</h1>
+  <button id="dataBtn">데이터 가져오기</button>
+  <form>
+    <label>이름</label><br/>
+    <input type="text" name="name">
+    <label>국어</label><br/>
+    <input type="text" name="name">
+    <label>영어</label><br/>
+    <input type="text" name="name">
+    <label>수학</label><br/>
+    <input type="text" name="name">
+  </form>
+  <table>
+    <thead>
+      <tr>
+        <th>번호</th>
+        <th>이름</th>
+        <th>국어</th>
+        <th>영어</th>
+        <th>수학</th>
+        <th>합계</th>
+        <th>평균</th>
+        <th>삭제</th>
+      </tr>
+    </thead>
+    <tbody id="tbody">
+    </tbody>
+  </table>
+</body>
+</html>

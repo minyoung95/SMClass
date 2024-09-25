@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <title>Ajax</title>
+  <script>
+    $(function(){
+
+    //   var board = [{
+    //   "number":1,
+    //   "title":"Computer Systems Analyst IV",
+    //   "date":"2024-07-17",
+    //   "name":"Trixi Davinet",
+    //   "hit":77
+    //   },
+    //   {
+    //   "number":2,
+    //   "title":"Clinical Specialist",
+    //   "date":"2024-08-04",
+    //   "name":"Nicol Lumox",
+    //   "hit":41
+    //   }
+    // ];
+
+    //   console.log(board.number);
+    //   console.log(board.title);
+    //   console.log(board.date);
+    //   console.log(board.name);
+    //   console.log(board.hit);
+
+
+    
+
+    $("#dataBtn").click(function(){
+      alert("ㅂㅌ")
+    //ajax 선언
+      $.ajax({
+        url: "js/boardData.json",
+        type: "get", // get, post
+        data: "", // 데이터를 서버로 전송
+        dataType: "json", //html,xml,json,html..~
+        success: function(data){ // 서버송신 성공시
+        console.log(data);
+        
+        // data : 배열 -> for문
+        var num_data = "";
+        for(var i = 0; i < data.length; i++){
+          //num_data += data[i].number + "," + data[i].title + "," + data[i].date + "," + data[i].name + "," + data[i].hit;
+          // num_data += `${data[i].number},${data[i].title},${data[i].date},${data[i].name},${data[i].hit}`;
+          num_data += `<tr id='${data[i].number}'>`
+          num_data += `<td>${data[i].number}</td>`
+          num_data += `<td>${data[i].title}</td>`
+          num_data += `<td>${data[i].date}</td>`
+          num_data += `<td>${data[i].name}</td>`
+          num_data += `<td>${data[i].hit}</td>`
+          num_data += `<td><button class='delBtn'>삭제</button></td>`
+          num_data += `</tr>`
+
+        }
+        $("#tbody").html(num_data); // tbody 안에 표 입력
+        },
+        error:function(){ // 서버송신 에러시
+        console.log("실패");
+        alert("실패요");
+        }
+      }); // ajax
+
+    }); // dataBtn
+
+
+
+    }); //제이쿼리
+  </script>
+  <style>
+    h1{text-align: center;}
+    table, th, td{border: 1px solid black; border-collapse: collapse;}
+    table{width: 80%; margin: 0 auto;}
+    th, td{width: 150px; height: 40px; text-align: center;}
+    th:nth-child(2){width: 500px;}
+    div{width: 600px; margin: 30px auto; border: 1px solid black;}
+  </style>
+</head>
+<body>
+  <h1>게시판</h1>
+  <button id="dataBtn">데이터 가져오기</button>
+  <table>
+    <thead>
+      <tr>
+        <th>번호</th>
+        <th>제목</th>
+        <th>날짜</th>
+        <th>작성자</th>
+        <th>조회수</th>
+        <th>삭제</th>
+      </tr>
+    </thead>
+    <tbody id="tbody">
+    </tbody>
+  </table>
+
+  <div id="d01"></div>
+</body>
+</html>

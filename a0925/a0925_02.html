@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src = "http://code.jquery.com/jquery-latest.min.js"></script>
+  <title>Document</title>
+  <script>
+    $(function(){
+
+      //슬라이드 닫기(.slideUp(몇초, 옵션))
+      $(".btn2").click(function(){
+        $(".box").stop();  // 반복되는거 방지
+        $(".box").slideUp(1000, "linear", function(){}
+        );
+      });
+
+      //슬라이드 펼치기
+      $(".btn1").click(function(){
+        $(".box").stop();
+        $(".box").slideDown(1000, "linear", function(){}
+        );
+      });
+
+      $(".btn3").on("click",function(){
+        $(".box").fadeIn(1000, "swing", function(){
+        })
+      });
+
+      // toggle 효과
+      $(".btn4").on("click",function(){
+        $(".box").stop();
+        $(".box").slideToggle(1000, "linear", function(){
+        })
+      });
+
+
+      // .on("이벤트 여러개 적용 가능")
+      // $("#in").on("mouseover focus", function(){
+      // $(this).css({"border":"4px solid black", "background":"yellow"});
+      // })
+
+      // 이벤트 제거
+      // $("#in").off("mouseover");
+
+    }); // 제이쿼리
+  </script>
+  <style>
+    .content{
+      width: 400px;
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <button class="btn1">슬라이드 펼치기</button>
+  <button class="btn2">슬라이드 닫기</button>
+  <button class="btn3">Fade In</button>
+  <button class="btn4">toggle</button>
+  <br/>
+  <div class="box">
+    <div class="content">
+      홍명보 축구대표팀 감독이 24일 국회에서 열린 문화체육관광위원회 전체회의에 출석하면서 후배인 박주호 전 축구협회 전력강화위원의 눈을 피하는 모습이 포착됐다. 
+      국회에서의 해명에도 축구팬들 사이에서 홍 감독과 대한축구협회를 향한 시선이 여전히 따가운 가운데 박문성 해설위원과 박주호 위원이 적극적으로 소신 발언을 쏟아내며 ‘청문회 스타’로 떴다.
+    </div>
+
+  </div>
+  
+</body>
+</html>
