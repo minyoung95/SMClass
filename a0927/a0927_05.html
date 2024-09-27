@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <title>Document</title>
+  <style>
+    #main{width: 800px; margin: 50px auto;}
+    #wrap{width: 800px; height: 400px; border: 2px solid black; margin-top: 20px;}
+
+
+  </style>
+  <script>
+    $(function(){
+
+      let labelArr = [];
+      let dataArr = [];
+
+      $.ajax({
+        url: "js/stuData.json",
+        type: "get",
+        data: "",
+        dataType: "json",
+        success:function(data){
+          alert("성공");
+          console.log(data);
+
+
+        }
+      })
+
+
+      $("#dataBtn").click(function(){
+
+        const ctx = document.getElementById('myChart');
+        let chartStatus = Chart.getChart("myChart");
+        if(chartStatus != undefined){
+          console.log("success");
+          chartStatus.destory();
+        }
+        new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [{
+        label: '# of Votes',
+        data: [12, 19, 3, 5, 2, 3],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+      
+      }); // dataBtn
+
+    }); // jquery
+  </script>
+</head>
+<body>
+  <div id="main">
+    <select name="dataList" id="dataList">
+      <option value="10">1-10</option>
+      <option value="20">11-20</option>
+      <option value="30">21-30</option>
+    </select>
+    <button id="dataBtn">데이터불러오기</button>
+    <br/>
+    <div id="wrap">
+      <canvas id="myChart"></canvas>
+    </div>
+  </div>
+</body>
+</html>
