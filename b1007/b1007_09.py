@@ -38,3 +38,5 @@ while True: # 실행을 한번 시켜도 꺼지지 않게
   else:
     aa_list[int(cArr[0])][int(cArr[1])] = "꽝"
     print(f"{cArr} 다음기회에 : {money}")
+
+## a_list의 데이터가 어떻게 aa_list 데이터랑 겹치게
