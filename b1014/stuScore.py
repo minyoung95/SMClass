@@ -14,10 +14,10 @@ stuNo = 0 # 학생번호
 stuNo = len(students) # 리스트에 이미 학생이 차 있을 시 그 이후 번호로 지정해줌
 no = 0; name = ""; kor = 0; eng = 0; math = 0; total = 0; avg = 0; rank = 0 # 성적처리에 필요한 변수
 check = 0 # 체크할때 변수
-count = 1 # 등수?처리
+count = 1 # 등수처리
 
-# 학생성적프로그램
-while True:
+# 메뉴 출력함수
+def title_program():
   print("[ 학생성적프로그램 ]")
   print("-"*60)
   print("1. 학생성적입력")
@@ -29,32 +29,44 @@ while True:
   print("7. 학생성적정렬")
   print("0. 프로그램 종료")
   print("-"*60)
-  choice = input("원하는 번호를 입력하세요.(0.종료)>> ")
+  choice = input("원하는 번호를 입력하세요.(0.종료)>> ") # 일반변수 - return 필요
+  return choice
+# --------------------------------------
 
+# 학생성적 입력함수
+def stu_input(stuNo): # stuNo가 일반변수이므로 매개변수 적용
+  while True:
+    print("[ 1. 학생성적 입력 ]")
+    print()
+
+    no = stuNo + 1 # 리스트 - 학생 수
+    name = input(f"{no}번째 학생이름을 입력하세요.(0. 이전화면)")
+    if name == "0":
+      print("성적 입력을 취소합니다.")
+      print()
+      break # while True 쪽으로 되돌아감
+    kor = int(input("국어점수를 입력하세요."))
+    eng = int(input("영어점수를 입력하세요."))
+    math = int(input("수학점수를 입력하세요."))
+    total = kor+eng+math
+    avg = total/3
+    rank = 0
+
+    ss = {"no" : no, "name" : name, "kor" : kor, "eng" : eng, "math" : math, "total" : total, "avg" : avg, "rank" : rank}
+    students.append(ss)
+    stuNo += 1 # 다음 학생 번호를 1 증가
+    print(f"{name} 학생의 성적이 저장되었습니다.")
+    print()
+  return stuNo # 일반변수이므로 return으로 반환해주어야 함
+# --------------------------------------
+
+
+
+# 학생성적프로그램
+while True:
+  choice = title_program() # 함수호출 (메뉴 출력)
   if choice == "1":
-    while True:
-      print("[ 1. 학생성적 입력 ]")
-      print()
-
-      no = stuNo + 1 # 리스트 - 학생 수
-      name = input(f"{no}번째 학생이름을 입력하세요.(0. 이전화면)")
-      if name == "0":
-        print("성적 입력을 취소합니다.")
-        print()
-        break # while True 쪽으로 되돌아감
-      kor = int(input("국어점수를 입력하세요."))
-      eng = int(input("영어점수를 입력하세요."))
-      math = int(input("수학점수를 입력하세요."))
-      total = kor+eng+math
-      avg = total/3
-      rank = 0
-
-      ss = {"no" : no, "name" : name, "kor" : kor, "eng" : eng, "math" : math, "total" : total, "avg" : avg, "rank" : rank}
-      students.append(ss)
-      stuNo += 1 # 다음 학생 번호를 1 증가
-      print(f"{name} 학생의 성적이 저장되었습니다.")
-      print()
-
+    stuNo = stu_input(stuNo) # 함수호출 (학생성적 입력)
   elif choice == "2":
     print("[ 학생성적 출력 ]")
 
@@ -126,8 +138,43 @@ while True:
     if check == 0:
       print("학생 정보를 찾지 못했습니다. 다시 입력해주세요.")
       print()
-    
 
+  elif choice == "5":
+    print("[ 5. 학생성적 삭제 ]")
+    print()
+
+    name = input("찾고자 하는 학생의 이름을 입력하세요.")
+    for idx,s in enumerate(students):
+      if s['name'] == name:
+        print(f"{name} 학생을 찾았습니다.")
+        check = 1 # break 아래에 두면 적용이 안되어서 위로올림
+        choice = input(f"{name} 학생의 성적을 삭제하시겠습니까? (삭제 시 복구불가)\n1. 삭제 2. 취소 >> ")
+        if choice == "1":
+          del students[idx]
+          print(f"{name} 학생의 성적이 삭제되었습니다.")
+        else:
+          print("학생성적 삭제가 취소되었습니다.")
+          break
+
+    # 모든 학생의 비교(for문)가 끝난 후 cheak 확인
+    if check == 0:
+      print(f"{name} 학생이 없습니다. 다시 입력하세요.")
+      print()
+
+  elif choice == "6":
+    print("[ 6. 등수처리 ]")
+    print()
+
+    for s in students:
+      count = 1 # 1등인 데이터
+      for st in students:
+        if s['total'] < st['total']: # 다른 데이터와 비교(작을 경우)
+          count += 1 # 2등으로 밀려남
+        s['rank'] = count # 등수 입력
+
+    print("등수처리가 완료되었습니다.")
+    print()
+  
   elif choice == "7":
     while True:
       print("[ 7.학생성적 정렬 ]")
@@ -151,21 +198,9 @@ while True:
         break
 
       print("정렬이 완료되었습니다.")
+      print()
 
-
-  # stu_datas = []
-  # ss = {}
-
-  # ss['no'] = stuNo + 1
-  # ss['name'] = input("이름을 입력하세요")
-  # ss['kor'] = int(input("국어점수를 입력하세요."))
-  # ss['eng'] = int(input("영어점수를 입력하세요."))
-  # ss['math'] = int(input("수학점수를 입력하세요."))
-  # ss['total'] = ss['kor'] + ss['eng'] + ss['math']
-  # ss['avg'] = ss['total']/3
-  # ss['rank'] = 0
-
-
-  # stu_datas.append(ss)
-
-  # print(stu_datas)
+  elif choice == "0":
+    print("[ 0. 프로그램 종료 ]")
+    print("프로그램을 종료합니다.")
+    break
