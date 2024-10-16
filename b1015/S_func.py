@@ -12,7 +12,22 @@ count = 1 # 등수처리
 choice = 0
 stuNo = len(students) # 리스트에 이미 학생이 차 있을 시 그 이후 번호로 지정해줌
 
+students_key = ['no','name','kor','eng','math','total','avg','rank']
+f = open('students.txt','r',encoding='utf-8')
+while True:
+  line = f.readline()
+  if not line: break
+  s = line.strip().split(",")
+  s[0] = int(s[0])
+  s[2] = int(s[2])
+  s[3] = int(s[3])
+  s[4] = int(s[4])
+  s[5] = int(s[5])
+  s[6] = float(s[6])
+  s[7] = int(s[7])
 
+  students.append(dict(zip(students_key,s)))
+print(students)
 
 # 메뉴 출력함수
 def title_program():
@@ -53,9 +68,18 @@ def stu_input(stuNo): # stuNo가 일반변수이므로 매개변수 적용
     ss = {"no" : no, "name" : name, "kor" : kor, "eng" : eng, "math" : math, "total" : total, "avg" : avg, "rank" : rank}
     students.append(ss)
     stuNo += 1 # 다음 학생 번호를 1 증가
+
+    # 파일쓰기
+    f = open('students.txt','w',encoding='utf-8')
+    data = f"{ss['no']},{ss['name']},{ss['kor']},{ss['eng']},{ss['math']},{ss['total']},{ss['avg']},{ss['rank']}"
+    f.write(data)
+    f.close()
+
     print(f"{name} 학생의 성적이 저장되었습니다.")
     print()
   return stuNo # 일반매개변수이므로 return으로 반환해주어야 함
+
+
 # --------------------------------------
 
 # 학생성적 출력함수
