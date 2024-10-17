@@ -164,7 +164,7 @@ def stu_select():
       print("찾는 학생이 없습니다.")
     else:
       print(f"{name} 이름으로 {len(sArr)}명 검색되었습니다.")
-      stu_output(sArr)
+      stu_output()
 # --------------------------------------
 
 # 학생성적 삭제함수

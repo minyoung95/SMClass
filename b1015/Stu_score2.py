@@ -104,7 +104,6 @@ def stu_search(students):
       if s['name'].find(name) != -1: 
         sArr.append(s)
         check = 1
-
     if check == 0:
       print("찾는 학생이 없습니다.")
     else:
