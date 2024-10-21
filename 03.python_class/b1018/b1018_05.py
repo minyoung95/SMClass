@@ -22,13 +22,13 @@ class Circle:
     return c_str
 
 ### _, __ 내부적으로 캡슐화 하겠다 선언
-# c1 = Circle(10)           # 값을 입력 10
-# print(c1.get_length())    # getter 값출력 10
-# c1.set_length(200)        # setter 값입력 200
-# print(c1.get_length())    # getter 값출력 200
-# c1.__length = 100           # 변수 직접입력 100
-# print(c1.__length)          # 변수 직접출력 100
-# print(c1.get_length())    # getter 값출력 200 // 직접입력이 적용이 안된다. (캡슐화)
+c1 = Circle(10)           # 값을 입력 10
+print(c1.get_length())    # getter 값출력 10
+c1.set_length(200)        # setter 값입력 200
+print(c1.get_length())    # getter 값출력 200
+c1.__length = 100           # 변수 직접입력 100
+print(c1.__length)          # 변수 직접출력 100
+print(c1.get_length())    # getter 값출력 200 // 직접입력이 적용이 안된다. (캡슐화)
 
 c1 = Circle(10)
 print(c1)

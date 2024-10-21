@@ -28,24 +28,24 @@ s1.print()
 
 # # 클래스명.변수명 = 값 : 변수가 생성되어 클래스에 변수가 저장된다.
 # 기본 생성자 사용해서 값을 개별적으로 입력
-# s1 = Student()
-# s1.no = 1
-# s1.name = "홍길동"
-# s1.kor = 100
-# s1.eng = 100
-# s1.math = 100
+s1 = Student()
+s1.no = 1
+s1.name = "홍길동"
+s1.kor = 100
+s1.eng = 100
+s1.math = 100
 
 # #클래스 내 변수출력
-# print(s1.no)
-# print(s1.name)
-# s2 = Student() # 다른공간
-# s2.no = 2
-# s2.name = "유관순"
-# s2.kor = 100
-# s2.eng = 100
-# s2.math = 100
+print(s1.no)
+print(s1.name)
+s2 = Student() # 다른공간
+s2.no = 2
+s2.name = "유관순"
+s2.kor = 100
+s2.eng = 100
+s2.math = 100
   
 
-# ## 전체 학생 리스트 정보
-# class Students:
-#   pass
+## 전체 학생 리스트 정보
+class Students:
+  pass
