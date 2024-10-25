@@ -59,6 +59,8 @@ def num_chg(p):
   price = f_num + s_num
   return price
 
+
+
 ## 평수 구하는 함수 (138/101m**2, 7/35층, 남향)
 def spec_chg(spec):
   spec_a = spec.split(',') # , 나누기
