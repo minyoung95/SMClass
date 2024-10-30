@@ -290,6 +290,8 @@ select * from employees where job_id like '%MAN';
 select * from employees where job_id like 'ST%';
 
 -- a가 들어가있는 이름 출력
+select * from employees where emp_name like '%a%';
+
 select * from employees where emp_name not like '%a%';
 
 -- 두번째 자리 t가 들어가있는 이름 출력(_x : _갯수 + x번째 자리)
@@ -300,4 +302,4 @@ select * from employees where emp_name like '___v%';
 select * from employees where emp_name like '%l_';
 
 -- 첫번째 대문자 D 이름
-select * from employees where emp_name like 'D%'
+select * from employees where emp_name like 'D%';
