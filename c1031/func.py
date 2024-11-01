@@ -29,6 +29,7 @@ def mem_login():
     user_id = input('아이디를 입력하세요')
     user_pw = input('패스워드를 입력하세요')
     
+    ## db 접속
     conn = connects()
     cursor = conn.cursor()
     sql = 'select * from member where id=:id and pw=:pw'
