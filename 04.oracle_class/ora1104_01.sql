@@ -452,6 +452,7 @@ where a.no = b.no
 select name,avg,grade grades from stu,stu_grade
 where avg between lototal and hitotal;
 
+
 -- self join: 자신의 테이블 2개를 join 결과값 출력
 select employee_id,emp_name,manager_id from employees;
 
@@ -463,3 +464,5 @@ select a.employee_id,a.emp_name,a.manager_id,b.emp_name
 from employees a, employees b
 where a.manager_id = b.employee_id and a.manager_id = 124;
 -- a의 매니저아이디(124) > b의 사원아이디(196>124) > b의 사원명(124와 대칭되는)을 찾을수 있게 해줌
+
+select * from students;
