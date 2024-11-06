@@ -9,7 +9,6 @@ while True:
         print('[학생성적 입력]')
         print()
         stu_func.stu_insert()        
-        
     elif choice == '2':
         print('[ 학생성적 출력 ]')
         print()
@@ -21,7 +20,7 @@ while True:
     elif choice == '4':
         print('[ 학생성적 정렬 ]')
         print()
-        stu_func.stu_order()
+        stu_func.stu_sort()
     elif choice == '5':
         print('[ 등수 처리 ]')
         print()

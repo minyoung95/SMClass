@@ -40,18 +40,23 @@ def stu_insert():
     conn.close()
     print('학생성적이 저장되었습니다.')
 
-
-## 학생성적 출력함수
-def stu_output():
-    for s in s_title:
-        print(s,end='\t')
-    print();print('-'*80)
+### 2-1 출력함수
+def stu_print(*data):
+    
     # db연결
     conn = connects()
     cursor = conn.cursor()
-    sql = "select no,name,kor,eng,math,total,round(avg,2),rank,to_char(sdate,'yyyy-mm-dd') from students"
-    cursor.execute(sql)
+    if len(data) == 1:
+        cursor.execute(data[0])
+    else:
+        cursor.execute(data[0],search=data[1])
+        
     rows = cursor.fetchall()
+    print(f"\t\t\t\t\t\t\t\t[ 개수 : {len(rows)} ]")
+    # 학생성적 출력
+    for s in s_title:
+        print(s,end='\t')
+    print();print('-'*80)
     if len(rows) < 1:
         print('데이터가 없습니다.')
         return # 함수반환
@@ -60,8 +65,14 @@ def stu_output():
             print(r,end='\t')
         print()
     conn.close()
-    print('학생성적 출력완료')
-    
+    print('학생성적 출력완료')    
+
+## 학생성적 출력함수
+def stu_output():
+    sql = "select no,name,kor,eng,math,total,round(avg,2),rank,to_char(sdate,'yyyy-mm-dd') from students"
+    stu_print(sql)
+
+## 학생성적 검색함수    
 def stu_search():
     print('1. 이름으로 검색')
     print('2. 합계순으로 검색')
@@ -72,43 +83,15 @@ def stu_search():
         search = input('찾고자 하는 이름을 입력하세요. >> ')
         search = '%'+search+'%'
         sql = "select no,name,kor,eng,math,total,round(avg,2),rank,to_char(sdate,'yyyy-mm-dd') from students where name like :search"
-        for s in s_title:
-            print(s,end='\t')
-        print();print('-'*80)
-        # db연결
-        conn = connects()
-        cursor = conn.cursor()
-        cursor.execute(sql,search=search)
-        rows = cursor.fetchall()
-        if len(rows) < 1:
-            print('데이터가 없습니다.')
-            return
-        for row in rows:
-            for i,r in enumerate(row):
-                print(r,end='\t')
-            print()
+        stu_print(sql,search)
     if choice == '2':
         print('[ 합계순으로 검색 ]')
         print()
         sql = "select no,name,kor,eng,math,total,round(avg,2),rank,to_char(sdate,'yyyy-mm-dd') from students order by total"
-        for s in s_title:
-            print(s,end='\t')
-        print();print('-'*80)
-        # db연결
-        conn = connects()
-        cursor = conn.cursor()
-        cursor.execute(sql)
-        rows = cursor.fetchall()
-        if len(rows) < 1:
-            print('데이터가 없습니다.')
-            return
-        for row in rows:
-            for i,r in enumerate(row):
-                print(r,end='\t')
-            print()
-        conn.close()
+        stu_print(sql)
 
-def stu_order():
+## 학생성적 정렬함수
+def stu_sort():
     print('1. 이름순차정렬')
     print('2. 이름역순정렬')
     print('3. 합계순차정렬')
@@ -128,24 +111,15 @@ def stu_order():
         print('[ 합계 역순정렬 ]')
         sql = "select no,name,kor,eng,math,total,round(avg,2),rank,to_char(sdate,'yyyy-mm-dd') from students order by total desc"
         
-    conn = connects()
-    cursor = conn.cursor()
-    cursor.execute(sql)
-    rows = cursor.fetchall()
-    if len(rows) < 1:
-        print('데이터가 없습니다.')
-        return
-    for row in rows:
-        for i,r in enumerate(row):
-            print(r,end='\t')
-        print()
-    conn.close()
+    stu_print(sql)
 
+## 등수처리 함수
 def stu_rank():
     sql = "update students a set rank =(\
             select ranks from(\
             select no,rank()over(order by total desc) ranks from students)b\
             where a.no = b.no)"
+    # db연결
     conn = connects()
     cursor = conn.cursor()
     cursor.execute(sql)
@@ -154,14 +128,5 @@ def stu_rank():
     print()
     # ----------------------- 등수처리
     sql = "select no,name,kor,eng,math,total,round(avg,2),rank,to_char(sdate,'yyyy-mm-dd') from students"
-    cursor.execute(sql)
-    rows = cursor.fetchall()
-    if len(rows) < 1:
-        print('데이터가 없습니다.')
-        return
-    for row in rows:
-        for i,r in enumerate(row):
-            print(r,end='\t')
-        print()        
-    conn.close()
+    stu_print(sql)
   
