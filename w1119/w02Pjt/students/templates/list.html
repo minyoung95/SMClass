@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>학생전체리스트</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    .main{margin: 30px auto; text-align:center;}
+    h2{margin: 30px 0;}
+    table,th,td{border:1px solid black; border-collapse:collapse;}
+    table{width: 1200px; margin:0 auto;}
+    th,td{width: 200px; height : 45px;}
+    button{width: 120px; height: 40px;}
+  </style>
+</head>
+<body>
+  <div class='main'>
+    <h2>학생전체리스트</h2>
+    <h4>등록인원 : {{slist.count}}</h4>
+    <table>
+      <tr>
+        <th>번호</th>
+        <th>이름</th>
+        <th>학과</th>
+        <th>학년</th>
+        <th>수정</th>
+        <th>삭제</th>
+      </tr>
+      {% for s in slist %}
+      <tr>
+        <td>{{s.id}}</td>
+        <td><a href="{% url 'students:view' s.name %}">{{s.name}}</a></td> 
+        <td>{{s.major}}</td>
+        <td>{{s.grade}}</td>
+        <td><button type='button' onclick="">수정</button></td> <!--location.href='/students/update/{{s.name}}'-->
+        <td><button type='button' onclick="">삭제</button></td> <!--delBtn('{{s.name}}')-->
+      </tr>
+      {% endfor %}
+    </table>
+    <br/>
+    <button onclick="location.href='/'">홈으로</button>
+    <button onclick="location.href='/students/write/'">학생입력</button>
+  </div>
+</body>
+</html>
